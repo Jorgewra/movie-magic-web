@@ -20,8 +20,8 @@ class CreateMovieActorsTable extends Migration
             $table->timestamps();
         });
         Schema::table('movie_actors', function (Blueprint $table) {
-            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
-            $table->foreign('actor_id')->references('id')->on('actors')->onDelete('cascade');
+            $table->foreign('movie_id')->references('id')->on('movies');
+            $table->foreign('actor_id')->references('id')->on('actors');
         });
     }
 

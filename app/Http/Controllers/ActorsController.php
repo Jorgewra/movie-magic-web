@@ -5,17 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\models\Actor;
+use Validator;
 
 class ActorsController extends Controller
 {
     private $actor;
-    public function __construct(Actor $movie) {
+    public function __construct(Actor $actor) {
         $this->actor = $actor;
     }
     public function getAll()
     {
         try {
-            $list = Actor::orderBy('created_at', 'desc')->with('getMovies')->paginate(10);
+            $list = Actor::orderBy('created_at', 'desc')->paginate(10);
             if($list == null || count($list) == 0){
                 return response()->json([
                     'message' => 'Not found',
@@ -98,13 +99,13 @@ class ActorsController extends Controller
      */
     public function destroy($id)
     {
-        $mov = $this->movie_db::find($id);
-        if ($mov == null) {
+        $act = $this->actor::find($id);
+        if ($act == null) {
             return response()->json([
                     'message' => 'Movie not found',
             ], 400);
         }else{
-            $mov->delete();
+            $act->delete();
             return response()->json(['message' => 'Deleted'], 200);
         }
 

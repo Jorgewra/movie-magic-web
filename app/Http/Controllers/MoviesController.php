@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\models\Movie;
+use App\models\MovieActor;
 use Validator;
 
 class MoviesController extends Controller
 {
     private $movie_db;
-    public function __construct(Movie $movie) {
+    private $movieActor_db;
+    public function __construct(Movie $movie, MovieActor $movieActor) {
         $this->movie_db = $movie;
+        $this->movieActor_db = $movieActor;
     }
     /**
      * Display a listing of the resource.
@@ -58,7 +61,6 @@ class MoviesController extends Controller
             $validator = Validator::make($request->all(),
             ['name' => 'required',
              'director' => 'required',
-             'district' => 'required',
              'classification' => 'required',
             ]);
             if ($validator->fails()) {
@@ -78,7 +80,19 @@ class MoviesController extends Controller
             }
             $this->movie_db->fill($request->all());
             $this->movie_db->save();
-            return response()->json(['message'=>'Success'], 200);
+            /**
+             * Save actor in movie
+             */
+            if(is_array($request->actors)){
+                $listActionMovie = [];
+                foreach($request->actors as $act){
+                   $obj = ['movie_id'=>$this->movie_db->id,'actor_id'=>$act['actor_id']];
+                   $this->movieActor_db->save($obj);
+                   array_push($listActionMovie,$obj);
+                }
+
+            }
+            return response()->json(['message' => 'Success'], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'message' => 'Failed in services!' . $e->getMessage(),

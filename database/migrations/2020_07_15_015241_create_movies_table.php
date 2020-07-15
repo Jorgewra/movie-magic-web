@@ -15,8 +15,8 @@ class CreateMoviesTable extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->index();
-            $table->string('director')->index();
+            $table->string('name',150)->index();
+            $table->string('director',150)->index();
             $table->enum('classification', ['ADULT','PARENTS_SUGGESTED','KIDS', 'GENERAL']);
             $table->timestamps();
         });

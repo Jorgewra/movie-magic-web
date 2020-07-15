@@ -15,7 +15,7 @@ class CreateActorsTable extends Migration
     {
         Schema::create('actors', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->index();
+            $table->string('name', 150)->index();
             $table->timestamps();
         });
     }

@@ -1,0 +1,501 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "L5 Swagger API",
+        "description": "Api integration MOVIE MAGIC WEB",
+        "contact": {
+            "email": "teste@teste.con"
+        },
+        "version": "1.0.0"
+    },
+    "host": "localhost:8000",
+    "basePath": "/api/v1",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/movie": {
+            "get": {
+                "tags": [
+                    "Movie"
+                ],
+                "summary": "get all movie",
+                "operationId": "getMovie",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/MovieListResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "500": {
+                        "description": "Server Errors"
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Movie"
+                ],
+                "summary": "Create new movie",
+                "operationId": "movieSave",
+                "parameters": [
+                    {
+                        "name": "movie",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/MovieSave"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/MovieResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "500": {
+                        "description": "Server Errors"
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            }
+        },
+        "/movie/{id}": {
+            "put": {
+                "tags": [
+                    "Movie"
+                ],
+                "summary": "Update new movie",
+                "operationId": "updateMovie",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "movie id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "movie",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/MovieUpdate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/MovieResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "500": {
+                        "description": "Server Errors"
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Movie"
+                ],
+                "summary": "delete movie",
+                "operationId": "deleteMovie",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "movie id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "500": {
+                        "description": "Server Errors"
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            }
+        },
+        "/actor": {
+            "get": {
+                "tags": [
+                    "Actor"
+                ],
+                "summary": "get all actor",
+                "operationId": "getActor",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ActorListResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "500": {
+                        "description": "Server Errors"
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Actor"
+                ],
+                "summary": "Create new actor",
+                "operationId": "actorSave",
+                "parameters": [
+                    {
+                        "name": "actor",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Actor"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ActorResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "500": {
+                        "description": "Server Errors"
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            }
+        },
+        "/actor/{id}": {
+            "put": {
+                "tags": [
+                    "Actor"
+                ],
+                "summary": "Update actor",
+                "operationId": "updateActor",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "actor id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "actor",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Actor"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ActorResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "500": {
+                        "description": "Server Errors"
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Actor"
+                ],
+                "summary": "delete actor",
+                "operationId": "deleteActor",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "actor id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "500": {
+                        "description": "Server Errors"
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "MovieSave": {
+            "required": [
+                "name",
+                "director",
+                "classification"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "director": {
+                    "type": "string"
+                },
+                "classification": {
+                    "type": "string",
+                    "enum": [
+                        "ADULT",
+                        "PARENTS_SUGGESTED",
+                        "KIDS",
+                        "GENERAL"
+                    ]
+                },
+                "actors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MovieActors"
+                    }
+                }
+            }
+        },
+        "MovieUpdate": {
+            "required": [
+                "name",
+                "director",
+                "classification"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "director": {
+                    "type": "string"
+                },
+                "classification": {
+                    "type": "string",
+                    "enum": [
+                        "ADULT",
+                        "PARENTS_SUGGESTED",
+                        "KIDS",
+                        "GENERAL"
+                    ]
+                }
+            }
+        },
+        "Actor": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "MovieActors": {
+            "properties": {
+                "actor_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "MovieResponse": {
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "director": {
+                    "type": "string"
+                },
+                "classification": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string",
+                    "example": "2018-04-16 11:11:11"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "example": "2018-04-16 11:11:11"
+                }
+            }
+        },
+        "ActorResponse": {
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string",
+                    "example": "2018-04-16 11:11:11"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "example": "2018-04-16 11:11:11"
+                }
+            }
+        },
+        "ActorListResponse": {
+            "type": "array",
+            "items": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "example": "2018-04-16 11:11:11"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "example": "2018-04-16 11:11:11"
+                    }
+                }
+            }
+        },
+        "MovieActorsResponse": {
+            "type": "array",
+            "items": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "movie_id": {
+                        "type": "integer"
+                    },
+                    "actor_id": {
+                        "type": "integer"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "example": "2018-04-16 11:11:11"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "example": "2018-04-16 11:11:11"
+                    }
+                }
+            }
+        },
+        "MovieListResponse": {
+            "type": "array",
+            "items": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "director": {
+                        "type": "string"
+                    },
+                    "classification": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "example": "2018-04-16 11:11:11"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "example": "2018-04-16 11:11:11"
+                    },
+                    "getActors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/Actor"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "passport": {
+            "type": "oauth2",
+            "description": "Laravel passport oauth2 security.",
+            "flow": "application",
+            "tokenUrl": "http://127.0.0.1:8000/oauth/token"
+        }
+    }
+}
