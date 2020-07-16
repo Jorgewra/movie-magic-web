@@ -23,9 +23,46 @@
                 "operationId": "getMovie",
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "successful operation",
                         "schema": {
-                            "$ref": "#/definitions/MovieListResponse"
+                            "properties": {
+                                "current_page": {
+                                    "type": "integer"
+                                },
+                                "first_page_url": {
+                                    "type": "string"
+                                },
+                                "from": {
+                                    "type": "integer"
+                                },
+                                "last_page": {
+                                    "type": "integer"
+                                },
+                                "next_page_url": {
+                                    "type": "string"
+                                },
+                                "path": {
+                                    "type": "string"
+                                },
+                                "per_page": {
+                                    "type": "integer"
+                                },
+                                "prev_page_url": {
+                                    "type": "integer"
+                                },
+                                "to": {
+                                    "type": "string"
+                                },
+                                "total": {
+                                    "type": "integer"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/MovieListResponse"
+                                    }
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -164,9 +201,46 @@
                 "operationId": "getActor",
                 "responses": {
                     "200": {
-                        "description": "Success",
+                        "description": "successful operation",
                         "schema": {
-                            "$ref": "#/definitions/ActorListResponse"
+                            "properties": {
+                                "current_page": {
+                                    "type": "integer"
+                                },
+                                "first_page_url": {
+                                    "type": "string"
+                                },
+                                "from": {
+                                    "type": "integer"
+                                },
+                                "last_page": {
+                                    "type": "integer"
+                                },
+                                "next_page_url": {
+                                    "type": "string"
+                                },
+                                "path": {
+                                    "type": "string"
+                                },
+                                "per_page": {
+                                    "type": "integer"
+                                },
+                                "prev_page_url": {
+                                    "type": "integer"
+                                },
+                                "to": {
+                                    "type": "string"
+                                },
+                                "total": {
+                                    "type": "integer"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ActorListResponse"
+                                    }
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -306,13 +380,28 @@
             ],
             "properties": {
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "default": "Matrix",
+                    "example": "Matrix"
+                },
+                "year": {
+                    "type": "number",
+                    "default": 1999,
+                    "example": 1999
+                },
+                "description": {
+                    "type": "string",
+                    "default": "Um jovem programador é atormentado por estranhos pesadelos nos quais sempre está conectado por cabos a um imenso sistema...",
+                    "example": "Um jovem programador é atormentado por estranhos pesadelos nos quais sempre está conectado por cabos a um imenso sistema..."
                 },
                 "director": {
-                    "type": "string"
+                    "type": "string",
+                    "default": "Lana Wachowski, Lilly Wachowski",
+                    "example": "Lana Wachowski, Lilly Wachowski"
                 },
                 "classification": {
                     "type": "string",
+                    "default": "PARENTS_SUGGESTED",
                     "enum": [
                         "ADULT",
                         "PARENTS_SUGGESTED",
@@ -341,6 +430,12 @@
                 "director": {
                     "type": "string"
                 },
+                "year": {
+                    "type": "number"
+                },
+                "description": {
+                    "type": "string"
+                },
                 "classification": {
                     "type": "string",
                     "enum": [
@@ -354,11 +449,25 @@
         },
         "Actor": {
             "required": [
-                "name"
+                "name",
+                "personage",
+                "paper"
             ],
             "properties": {
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "default": "Keanu Reeves",
+                    "example": "Keanu Reeves"
+                },
+                "personage": {
+                    "type": "string",
+                    "default": "Neo",
+                    "example": "Neo"
+                },
+                "paper": {
+                    "type": "string",
+                    "default": "Um jovem programador é atormentado por estranhos pesadelos nos quais..",
+                    "example": "Um jovem programador é atormentado por estranhos pesadelos nos quais..."
                 }
             }
         },

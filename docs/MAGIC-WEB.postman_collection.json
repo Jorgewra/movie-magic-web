@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "0e19985d-dd65-4902-bc6f-612e13f4ae92",
+		"name": "MAGIC-WEB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE_ACTOR",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjQyOGM2MjE5OTk0NWVjZmVhNGZkYWQwZGIzYzM0OTI2ZmY1MjA4ODAwNGYzNTA1OTI2OGRmM2Y2ZDBiYmYxMjRjZWFjZjMzZTRlYjE0ZTkiLCJpYXQiOjE1OTQ4NzE5MjAsIm5iZiI6MTU5NDg3MTkyMCwiZXhwIjoxNjI2NDA3OTIwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.J1LIoObmvLaPV_62ri8RM2vOJm3ZNithpIQNZ6pNlLxef8sivo3Gh6DDmJQXjy5ZN8fAtamkG__OQNBV4nIttH-OefzawEj0vnVN-foY5qC6AjYthwvpWs507DmTMsaywQQS61XaJwBAxiEkM38r8e4h7BLtz6llYS9AewbgKoCnjFvvtFy2sCQh-pYkXAqGORpVAzk8Bozie3UQIC1h82dUJlNMw5Q0RdT6LoH8yI4NppiVAn_Nl6BHBVYXEHgcFP73KXye364V1rVaqBalF85Ork44Nu_heSxAeSkesIxxIbLsqG8nCwrZbwdbCP9nYkvsjdE_LCoeuavWh8BtITWaBSUaIHbrPAGRTAE6Fp5-JXnTtzqxEQ10eXKRhjpRjG5ko6IHq0ZbODa5iRWW68Z7Lu11cohat3j2lhZQnZit3XFiqNbWIq9dRhLfbWO-pPivyRZnmlJxz1ViF9tr8BkTPrHjSOsrZb4g_WGoMikhj1PNK5NFkhMkWgUSWdhfxQPBulj9BvB_g6zMDzZgrQYxVhLXaKWEoI0H3itYof-FAbgVElexuFkWSGfDWtgFKaTEmGpXduGM7-y3TDcyWQRv1qkokqKOLIIQXt9TMbD8vuJ0BCKf8sI93sJMsAN9rdUeTlCrMfvNkUFLz7ez5YagwRwMV5EjR8aSr9pA6aE",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Keanu Reeves\",\n  \"personage\": \"Neo\",\n  \"paper\": \"Um jovem programador é atormentado por estranhos pesadelos nos quais...\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/actor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"actor"
+					]
+				},
+				"description": "Cria atores para o filme"
+			},
+			"response": []
+		},
+		{
+			"name": "GET_ACTORS",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDQwYTc0OGE5YTZiZDMwOWZlMjAwYWQ4ZDc1OTE3YTdiMGU1NDQ4NTg2MjY4NjkzNGZmMTIyMzhjNjRlMmMzMGIzZmEzZDRlYTQxZjg3NTgiLCJpYXQiOjE1OTQ4NzE5NTMsIm5iZiI6MTU5NDg3MTk1MywiZXhwIjoxNjI2NDA3OTUzLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.P5yD2H6WwEeJh11gswW7XT_YN_X59JxjmbExb-MeBhNSNL6Q64i0p789b1-ZSt5vmCOkxK4VUMtB4JIZqsXrHMdMuB5IyUZXLwrFMNLCQ3UNOxHiwW3clW45CLYzZO1354Dq0yBBV6zSnHfOLBcj8l5tasxJWx-Pnw1ZS3VwklLt_j1nL69aVH0AMLzmH7eM1y_hkisHfXdWtRMFkGdWxGZzLWsj7YLYWuktFrwpt-rI0OOVptkHrSejzftGG5ruD5UEyjxlwTnaMx3cqnDYwQtWU_Ui2KytCoFgcIJUMKsDFNdMqdd7h61jV_5EQQCYbPauZAmU35uJ_LxTvFFbijYABjq_GGm8dp2I1ldVBpstBWOT07RtmNfYQIjQrQmcS5k7xsF5t5OvKEBPBGTSb1vnwKEDZiGGsOAQmB8wDCSGetnjozt1rx3Kbnnar7JjtItqZpgba0rJz-DVFkKngADoUrObLsuQojZIuVY6t9NovCZucTqj-eukA1SBwbg4wcJ6Ch5sKLrloFqCnaaFOeXjuLr98AA0USq_oWl8Ezkvj3qdl3x-dvGRWnCYCwZr32zMSXSvBqDQPwDGXfPpvAGwdECMD18sddmGqojK5zfu3_qEZV8gPsF2TvMfbxdOsqUs4-wicc5l61wlAwcdOtZEz0AKDQZ1Ia4AFp61Y2s",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/actor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"actor"
+					]
+				},
+				"description": "Lista todos os atores"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE_ACTOR",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDdlMjJlZjAxZmYyZDhkY2FkYjRmOTFmYjRmZWJiZjNhYjAzZGUyODY4NmJjM2VhYjUwY2JhZmU4MTE0MWQyZjBiMjAwOGE4MDcwNmU5Y2QiLCJpYXQiOjE1OTQ4NzIxMjMsIm5iZiI6MTU5NDg3MjEyMywiZXhwIjoxNjI2NDA4MTIzLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.swops7m1pWY5M8Rib5ZexpxYMmA_1bfLEt2p2hHYEZMl-eWkxv12MSFWzRlM_XDWrY1tliIwMhJLsf9aagtaLALJ7TZyHxlI9XThCupXuVCBTi1nD1WN35UsUDLolAVbQhiiXXUyllIkztNvj3PY5LQdegIJuwjAzOXIhBOl2RgFYp6e-AOHgPqVL_9RieiFVhhn-Nfp__b_0n8YmNGyKJZMxNauUqziNkSFMPWxniYLjsaDg_kSmrP3KDquZEB4WO84PIx8bP8zBMcZ_qynmdLRv4JRxisALbB5zv7GQRC-swZn3eZPfZf74GZO81W4a_gFJr9rl-s2AI11xzo3qGazHbKt61nMMPnMfe3BRHvKJ-5Xp4bweeek1MpvmSN0t1XEpV7BuNIAsG9PqeNpG4EX3VP5fHgXNTuOwm0e_WxGEmLhbpXvCizhUf_fkx59K_AQ_VHUlGH91-9B0-i_ERASoD0LctBVwvXZouS5WWeWr837-ocW8wnlJmWlbQnuPqZ5xYNs7CNqUHgc1eqf6y-46Hk0wkT111JGOeDSxIpuG3JghVg12aFH9ETbFIMLs8sOEpAfJ6bdFugByeS9cS4-QngG-QVpUIzIALnn0AUAQRFLXj2ZeqfNAgqxCh_fpnxP2UyjTa7Ae9fQziQ4tBlF_cn3bjApna55bRNb_no",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Keanu Reeves 1\",\n  \"personage\": \"Neo\",\n  \"paper\": \"Um jovem programador é atormentado por estranhos pesadelos nos quais...\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/actor/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"actor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE_MOVIE",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjgzYTA1MzcyYTk0ODZkNjBhNjM4NGY2M2FjYmZmYzg0ZDFkZDcyN2M1YTZkZjYyZGNkMzE0NDdmMzViMTQ0Yjc5MTVmMmNmYTY3ZjAxMzciLCJpYXQiOjE1OTQ4NzIyNTksIm5iZiI6MTU5NDg3MjI1OSwiZXhwIjoxNjI2NDA4MjU5LCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.VkcUis2GhHs6oxM6U9yBZdlySWiWXwNNS6TFXywwDr71AUHK12x6idXWRz-Ne7GpBquuqs690wwDNzszt8ncQRCaMrR__zfGGngWtCLZ8iE_vnb5pbO5_Kcl9N671UGET5r5HF3Tb1yj-fI6mgS2rBkqUXlGjPy43LttcMd5lKhhRfRZn75edP_u117praM_M2I849Lkgu60Tn9AxN2KgUMvU0MhiGgKXuLPhesTXQG4mkh2Jcmo4a7bV0s1WT_237Saf5vdhN0iVZDaxxTBoHgSERd-A_EW-2A9tPiNCuYE8F5kwxejDzLGpDx35jVDVbon1TeTSUFJAdYEM3dHiV0Qtn36FyN6YAvRBG70bknFhPOOglgiYH-LweEGp1cX8usc6-7NpPuN0BSXtYtUw1h2ewHRstwFIrypaeTdExPusNNcHyj2ClTR_CUp2bX6g08kl23IowiDDk2fvRchs7fmaKFlYmNEUUrv07VV-oYFooK0PpPGrVjCvkgWJEOFhCK8OkHrUw_7B_IWC85M12n1xRMiWpqRcMBy9c_u8rzwGUG0SUlM8bnrOdmrxdC7UzSinIcBWWuT5_Orn_uqdPinxLLLrk-8znY4kJbPW527JZg9H3a7nBFFe0wOKgetQp_jt4wmjc2gj9rVJq-KMajvjWZBmJnzFexXM0Sfdt0",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Matrix\",\n  \"year\": 1999,\n  \"description\": \"Um jovem programador é atormentado por estranhos pesadelos nos quais sempre está conectado por cabos a um imenso sistema...\",\n  \"director\": \"Lana Wachowski, Lilly Wachowski\",\n  \"classification\": \"PARENTS_SUGGESTED\",\n  \"actors\": [\n    {\n      \"actor_id\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/movie",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"movie"
+					]
+				},
+				"description": "Cria filme com os atores"
+			},
+			"response": []
+		},
+		{
+			"name": "GET_MOVIES",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjk0YzE0MTEwMjZjNDAzYWViZTk1YmQ4NTk3MTJiNTYxYTBhZjBlYWE0OGE1YTM4ZGFmMjg2ZWIwMjA5NTQ4ZTQzYmEwZmMxZWUyZjRiNGYiLCJpYXQiOjE1OTQ4NzIzMzAsIm5iZiI6MTU5NDg3MjMzMCwiZXhwIjoxNjI2NDA4MzMwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.Ja2IRn0FsKHb2dr7SAaYIS_d9pLMp6-V9DFe-q3mnfVQRAnKj2ugz0Z-IFcAHDTaNTrcMzjXfeMpsVR7NrSv2j3p0I8GK02KOjjwq03-W0m__k1iE28AapdmlfIRGT4G0LRQ-KjwhUkBVtxMa-JTAbIyKX_KWQH-MuYKMCrXAkuapTTwidbWx5Ne2IRr1R7ppHRLCStcgM7Jp4XO3k1eMC9hZZtr-jdnW24jXGAqs7s7HbWwKOGzfBYpeRaM4pTCTk5JKm44ytgfH9wgMjJci_o8ve62NHBdUvnni-S5VWI68kQnbEap6g8IwBQ1rFKbDFPmRXhSC2YuULgHKUdN2ercOeSIMF1BBhFpjiw9UkDgLN1arKFzBVWAvkqzs-niLU8KsC3rSHPSsjR8-BdggObX5o2oNM6T6l4G1Ylerb84GGkELbNL50LRSRdhPqXxUPlWhS2jWMluiPnhqEUNLbPDCOTlx1eVGr58YrW2DWOMc2k3j4OE5jqXlr8PQnwTpCWfZp4yNBdFf9cocLY_iXYn7reIOKq2P5ddZiDwnBbgx_J4-XmrWzskbQnOb3cYcxT5_CpEmLDzG578xSgBM9FORHzdMjZ3SkVkXvefNvNIP-MZ2TDsdlFJ9s60KZ6XRezEZ9Y4faCrmzalKzPuBVdCZ3q1V8qB3VAjHVff5Xw",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/movie",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"movie"
+					]
+				},
+				"description": "Lista todo os filmes"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE_MOVIE",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2NiMmRlNzdlMDE5YTVmNTRlNTQ4NzQ5ZDUzYzJiM2QwYTMyOGM2ZTBiOGU5NzI2NzEzZmI2Yjk2ZmQ1N2IzN2YxMTRmNjdkMWIwYzEyMzQiLCJpYXQiOjE1OTQ4NzI0MTIsIm5iZiI6MTU5NDg3MjQxMiwiZXhwIjoxNjI2NDA4NDEyLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.hACiFKP6dYDkwegArd7_WsZoZseuYDRXQz5rCC4dLqv8oqtsmCwB3mYDlhUBcn7w5xxF8199SAhKxm-6nHGcD-OpL-Y7BTweqbSJMbrVbB2LpMVsnMnfp1RVNJXM9IXr2tkcQfoU-MSGxboDm8Ej-1UNkATEGiITc1kxOIQVr9thhnUvRlo_pWt9BZG0V-kSnxEEzaaraugGFfVbWh3Pn2wvmPRfBIUCMU6QvWSfbFK6Cq6kIn5gXt8fUMt6hQbhg3DJtlR5Oi81KW76K52vMKoXfjjK4B1tYLPueVfwjuRtTNgeCAyqNuORGvv60bv7PGAjMxjvP5cldYxLCU3Iaokz_nNmpWBeRE5-kssR1yI-LdPeLZOMs3ndi8eF73TgrAPsK2w8tICoUTpvONHhz0Sv8K-EyGMGUF0BT2LvD1qM_jUtj4NskCiLTan3ao019mXEowPCfZHwa8Rdw4oIO8oGQmnKAEO64Gx15tzkaGfDz4M6MzWcM6dCvKOJ_igCzyWikUD_RziQWP40Ea2TBtHxWPBQuxHkIymmY52C8ezAu16ipoX6-CyrTFRy6sPkXFr7CtmCaHG5jCFQnb9yqGldQ76KDlIQpNPBAMTJPgdyWR9YEzAkK_M5LY6cGaBjx92Nd2EN_cbXRIvBHv-oW2LxycvdGaxn9-8XKE4hhf4",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Matrix 1\",\n  \"year\": 1999,\n  \"description\": \"Um jovem programador é atormentado por estranhos pesadelos nos quais sempre está conectado por cabos a um imenso sistema...\",\n  \"director\": \"Lana Wachowski, Lilly Wachowski\",\n  \"classification\": \"PARENTS_SUGGESTED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/movie/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"movie",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}

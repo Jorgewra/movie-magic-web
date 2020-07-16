@@ -53,6 +53,8 @@ class ActorsController extends Controller
             $validator = Validator::make($request->all(),
             [
                 'name' => 'required',
+                'personage'=> 'required',
+                'paper'=> 'required',
             ]);
             if ($validator->fails()) {
                 return response()->json([

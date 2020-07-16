@@ -62,6 +62,9 @@ class MoviesController extends Controller
             ['name' => 'required',
              'director' => 'required',
              'classification' => 'required',
+             'year' => 'required',
+             'description' => 'required',
+
             ]);
             if ($validator->fails()) {
                 return response()->json([
@@ -77,6 +80,12 @@ class MoviesController extends Controller
                 }else{
                     $this->movie_db = $mov;
                 }
+            }else{
+                if(!is_array($request->actors)){
+                    return response()->json([
+                        'message' => 'Actors not found',
+                    ], 400);
+                }
             }
             $this->movie_db->fill($request->all());
             $this->movie_db->save();
@@ -84,13 +93,12 @@ class MoviesController extends Controller
              * Save actor in movie
              */
             if(is_array($request->actors)){
-                $listActionMovie = [];
                 foreach($request->actors as $act){
-                   $obj = ['movie_id'=>$this->movie_db->id,'actor_id'=>$act['actor_id']];
-                   $this->movieActor_db->save($obj);
-                   array_push($listActionMovie,$obj);
+                   $obj = new MovieActor();
+                   $obj->fill($act);
+                   $obj->movie_id = $this->movie_db->id;
+                   $obj->save();
                 }
-
             }
             return response()->json(['message' => 'Success'], 200);
         } catch (\Exception $e) {

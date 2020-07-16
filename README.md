@@ -1,5 +1,8 @@
 # Project MOVIE MAGIC WEB / BACKEND
 ## Start project step by step
+ * Verify install in your machine
+    [PHP >=7.2.5](https://www.php.net/downloads.php) | [composer] (https://getcomposer.org/) |
+
  1. Modify the file .env.example to .env
  2. modify in file .env the variable: 
     ```
@@ -15,10 +18,20 @@
  8. run command: php artisan serve
 
 # technology used
- - Passport Laravel
-   https://laravel.com/docs/7.x/passport
- - L5-Swagger
-   https://github.com/DarkaOnLine/L5-Swagger
-
+ - [Passport Laravel]
+   (https://laravel.com/docs/7.x/passport)
+ - [L5-Swagger]
+   (https://github.com/DarkaOnLine/L5-Swagger)
+ - [Laravel 7] 
+   (https://laravel.com/docs/7.x)
 # dependence's
+ - PHP >=7.2.5
+ - composer 
+
+ # Documents
+1. O desenvolvimento deste projeto iniciou-se primeiramente com a modelagem de banco de dados:
+Onde temos 2(Duas) tabelas principais e 1(Um) intermediária para armazenamento de muitos para muitos, segue o modelo na imagem 01.
+2. A criação das apis Rest, onde adotamos uma autenticação por token de acesso `oauth2` disponibilizado pela API do Laravel a biblioteca `Laravel Passport`, nesse conceito de autenticação por credênciais, então é usado um `ID` e uma `CHAVE SECRETA`, onde é passado ao backend para realizar a autenticação e é retornado um `TOKEN` válido para o acesso das API`s.
+O uso dessa estratégia, foi adotado pelo fato de não haver autenticação com senhas de usuários cadastrados.
+3. A biblioteca  `L5 Swagger` facilita a documentação, organização das API`s Rest e também nos testes sem uso de programas como o POSTMAN para documentações de coleções.
 
