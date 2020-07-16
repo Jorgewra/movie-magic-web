@@ -1,7 +1,7 @@
 # Project MOVIE MAGIC WEB / BACKEND
 ## Start project step by step
  * Verify install in your machine
-    [PHP >=7.2.5](https://www.php.net/downloads.php) | [composer] (https://getcomposer.org/)
+    [PHP >=7.2.5](https://www.php.net/downloads.php) | * [composer] (https://getcomposer.org/)
 
  1. Modify the file .env.example to .env
  2. modify in file .env the variable: 
@@ -36,7 +36,7 @@ Onde temos 2(Duas) tabelas principais e 1(Um) intermediária para armazenamento 
 O uso dessa estratégia, foi adotado pelo fato de não haver autenticação com senhas de usuários cadastrados.
 3. A biblioteca  `L5 Swagger` facilita a documentação, organização das API`s Rest e também nos testes sem uso de programas como o POSTMAN para documentações de coleções.
 
-[DOCUMENTAÇÃO WORD] (https://github.com/Jorgewra/movie-magic-web/blob/master/docs/DOC_USE.docx)
-[POSTMAN COLLECTIONS API] (https://github.com/Jorgewra/movie-magic-web/blob/master/docs/MAGIC-WEB.postman_collection.json)
+* [DOCUMENTAÇÃO WORD] (https://github.com/Jorgewra/movie-magic-web/blob/master/docs/DOC_USE.docx)
+* [POSTMAN COLLECTIONS API] (https://github.com/Jorgewra/movie-magic-web/blob/master/docs/MAGIC-WEB.postman_collection.json)
 
 
